@@ -32,7 +32,8 @@ jobs:
       # Latest published test harness pins Home Assistant 2026.10.2.
       # The integration baseline is 2026.10.3; both share the config-flow API.
       - run: python -m pip install pytest-homeassistant-custom-component==0.13.373 tuya-device-sharing-sdk==0.2.15 tuya-device-handlers==0.0.31
-      - run: pytest tests/ha -q --asyncio-mode=auto
+      - run: python -c "import custom_components.connectsmarthome.config_flow"
+      - run: python -m pytest tests/ha -q --asyncio-mode=auto
 
   hacs:
     runs-on: ubuntu-latest

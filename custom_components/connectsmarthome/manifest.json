@@ -1,6 +1,7 @@
 {
   "domain": "connectsmarthome",
   "name": "ConnectSmartHome (Experimental)",
+  "categories": ["hubs_protocols.smart_home_hubs"],
   "codeowners": [
     "@FoxyOwl833"
   ],

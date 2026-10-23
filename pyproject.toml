@@ -9,3 +9,4 @@ known-first-party = ["custom_components"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests/unit"]
+pythonpath = ["."]
