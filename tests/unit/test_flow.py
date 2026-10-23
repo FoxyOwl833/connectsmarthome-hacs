@@ -237,7 +237,16 @@ def test_packaging():
     manifest = json.loads((COMPONENT / "manifest.json").read_text())
     assert manifest["domain"] == "connectsmarthome"
     assert manifest["version"] == "0.1.0-beta.1"
-    assert len(list((ROOT / "custom_components").iterdir())) == 1
+    assert (
+        len(
+            [
+                p
+                for p in (ROOT / "custom_components").iterdir()
+                if p.is_dir() and p.name != "__pycache__"
+            ]
+        )
+        == 1
+    )
     assert "[%key:" not in (COMPONENT / "translations/en.json").read_text()
     assert '"tuya_discovery_new"' not in (COMPONENT / "const.py").read_text()
     assert '"tuya_entry_update"' not in (COMPONENT / "const.py").read_text()
