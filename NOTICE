@@ -1,0 +1,15 @@
+ConnectSmartHome HACS integration
+
+Based on the Tuya integration from Home Assistant Core 2026.10.3:
+https://github.com/home-assistant/core/tree/2026.10.3/homeassistant/components/tuya
+Commit: 1f214b8461dd1fbbd66e10765c6905f49d3c1d86
+Copyright The Home Assistant Authors. Licensed under Apache License 2.0.
+
+Modifications: standalone connectsmarthome domain, independent discovery and
+entity identifiers, custom configuration and reauthentication flow, resolved
+English translations, HACS metadata, diagnostics adjustments and tests.
+
+Uses the separately distributed official tuya-device-sharing-sdk (MIT) and
+tuya-device-handlers (Apache-2.0) through the integration manifest.
+This project is not affiliated with or endorsed by Tuya, ConnectSmartHome,
+Home Assistant, or HACS. App names and marks belong to their owners.

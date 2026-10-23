@@ -1,0 +1,23 @@
+{
+  "domain": "connectsmarthome",
+  "name": "ConnectSmartHome (Experimental)",
+  "codeowners": [
+    "@FoxyOwl833"
+  ],
+  "config_flow": true,
+  "dependencies": [
+    "ffmpeg"
+  ],
+  "documentation": "https://github.com/FoxyOwl833/connectsmarthome-hacs",
+  "integration_type": "hub",
+  "iot_class": "cloud_push",
+  "loggers": [
+    "tuya_sharing"
+  ],
+  "requirements": [
+    "tuya-device-handlers==0.0.31",
+    "tuya-device-sharing-sdk==0.2.15"
+  ],
+  "version": "0.1.0-beta.1",
+  "issue_tracker": "https://github.com/FoxyOwl833/connectsmarthome-hacs/issues"
+}
