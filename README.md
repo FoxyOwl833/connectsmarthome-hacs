@@ -4,9 +4,13 @@ A HACS custom integration that attempts to authorize a **ConnectSmartHome**
 account using its **User Code and in-app QR scanner**, with device platforms
 adapted from Home Assistant's official Tuya integration (Core 2026.10.3).
 
-**Status: experimental. ConnectSmartHome QR approval and device control have
-not yet been verified.** A successful QR-token request alone does not prove
-that the app will approve it. Some Tuya OEM apps reject this service:
+**Status: pairing blocked in live testing. This is not a working ConnectSmartHome
+integration yet.** The authorization service accepted a ConnectSmartHome User
+Code and issued QR tokens, but the app rejected the QR login with:
+“Please use the designated APP to scan the code to log in”. Generating fresh
+tokens has not established a working login. Device discovery and control remain
+untested. Automated tests use mocked authorization responses and do not establish
+compatibility with the real app. Some Tuya OEM apps reject this service:
 [upstream SDK issue #43](https://github.com/tuya/tuya-device-sharing-sdk/issues/43).
 An app-side authorization restriction cannot be removed by renaming a component.
 
