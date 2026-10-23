@@ -14,6 +14,17 @@ compatibility with the real app. Some Tuya OEM apps reject this service:
 [upstream SDK issue #43](https://github.com/tuya/tuya-device-sharing-sdk/issues/43).
 An app-side authorization restriction cannot be removed by renaming a component.
 
+Tuya's official OEM guidance confirms the standard Tuya integration supports
+the public Tuya apps and directs OEM app linking requests to the app owner's
+business manager:
+- [OEM app eligibility](https://support.tuya.com/en/help/_detail/Kfh5ucieujq00)
+- [OEM linking procedure](https://support.tuya.com/en/help/_detail/Kfh46ge9n8msa)
+- [QR login authorization and app allowlisting](https://developer.tuya.com/en/docs/app-development/userqrlogin?id=Ka6a99lrvq6tn)
+
+The next requirement is ConnectSmartHome/Tuya approval or a documented
+ConnectSmartHome-compatible authorization registration, followed by real account
+and device tests. There is no verified client-side fix in this repository.
+
 ## Install with HACS
 
 Requires **Home Assistant 2026.10.3 or later** and HACS.
