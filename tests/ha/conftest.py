@@ -4,6 +4,9 @@ from unittest.mock import patch
 
 import pytest
 
+from custom_components import connectsmarthome
+from custom_components.connectsmarthome import config_flow
+
 
 @pytest.fixture(autouse=True)
 def custom_integration(enable_custom_integrations):
@@ -14,7 +17,7 @@ def custom_integration(enable_custom_integrations):
 @pytest.fixture
 def login():
     """Fake only the remote authorization server."""
-    with patch("custom_components.connectsmarthome.config_flow.LoginControl") as cls:
+    with patch.object(config_flow, "LoginControl") as cls:
         instance = cls.return_value
         instance.qr_code.return_value = {
             "success": True,
@@ -38,7 +41,5 @@ def login():
 @pytest.fixture(autouse=True)
 def setup_entry():
     """Flow tests must not open real cloud or MQTT connections after setup."""
-    with patch(
-        "custom_components.connectsmarthome.async_setup_entry", return_value=True
-    ):
+    with patch.object(connectsmarthome, "async_setup_entry", return_value=True):
         yield
